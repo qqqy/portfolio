@@ -9,26 +9,88 @@ body {
   min-height: 100vh;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: bold;
+  ul {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
 }
 
 #menu {
   position: fixed;
   height: 100vh;
   width: calc(25vw + 194.5px);
-  background-color: #d3d0d0;
 }
 
 #sculpt {
   background-color: white;
     height: 140vh;
     width: 389px;
-    position: relative;
+    position: absolute;
     border-radius: 50%;
     top: -20vh;
-    left: 25vw;
+    right: -160.5px;
 }
 
 #content {
   position: relative;
   padding: 20px 20px 20px 33vw;
+}
+
+#welcome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 228.5px);
+  padding: 20px;
+  * {
+    text-align: center;
+  }
+  animation-name: intro;
+  animation-duration: 3s;
+  transition-timing-function: ease-out;
+}
+
+#profile {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  background-color: yellow;
+  margin: auto;
+}
+
+#menu-animation {
+  @extend #menu;
+  animation-name: slidein;
+  animation-duration: 2s;
+  background-color: #d3d0d0;
+}
+
+@keyframes slidein {
+  from {left: -40vw}
+  to {left: 0}
+}
+
+@keyframes intro {
+  from {
+    left: 40vw;
+    top: 10vh;
+  }
+  60% {
+    left: 40vw;
+    top: 10vh;
+  }
+  70% {
+    
+  }
+  80% {
+    // top: 2vh;
+  }
+  90% {
+    top: 0;
+  }
+  to {
+    left: 0;
+    top: 0;
+  }
 }
